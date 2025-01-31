@@ -7,6 +7,7 @@ public class Task13 {
         Scanner scanner = new Scanner(System.in);
         int prev = scanner.nextInt();
         while (true) {
+            System.out.println("Введи следующее число");
             int curr = scanner.nextInt();
             if (curr < prev) break;
             prev = curr;
