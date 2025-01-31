@@ -3,7 +3,6 @@ package org.example.Tasks5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Task12 {
     public static int sumOfSteppedArray(List<List<Integer>> steppedArray) {

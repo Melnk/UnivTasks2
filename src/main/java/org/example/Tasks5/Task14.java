@@ -1,7 +1,5 @@
 package org.example.Tasks5;
 
-import java.util.Scanner;
-
 public class Task14 {
     public static int linearSearch(int[] array, int target) {
         for (int i = 0; i < array.length; i++) {

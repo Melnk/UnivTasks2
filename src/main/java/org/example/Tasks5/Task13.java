@@ -3,7 +3,6 @@ package org.example.Tasks5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Task13 {
     public static int[] findMaxElementIndex(List<List<Integer>> steppedArray) {
