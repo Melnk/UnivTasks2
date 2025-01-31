@@ -1,8 +1,12 @@
 package org.example.Task3;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+
 // Task12.java
 public class Task12 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         double[][] matrix = {
                 {2, 4, 6},
                 {-3, 9, -6},

@@ -1,8 +1,12 @@
 package org.example.Task3;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+
 // Task6.java
 public class Task6 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         // а) Арифметическая прогрессия
         int a = 3, p = 2;
         int[] arithProgression = new int[10];

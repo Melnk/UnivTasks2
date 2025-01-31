@@ -1,10 +1,13 @@
 package org.example.Task3;
 
 // Task7.java
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class Task7 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Scanner scanner = new Scanner(System.in);
         int[] arr = {1, 2, 3, 4, 5}; // Примерный массив
         int sum = 0, product = 1, sumSquares = 0, sumFirstSix = 0;
