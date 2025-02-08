@@ -1,6 +1,5 @@
 package org.example.HomeWork2;
 
-// File: Task8.java
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
