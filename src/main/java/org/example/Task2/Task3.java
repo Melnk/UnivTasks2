@@ -1,9 +1,12 @@
 package org.example.Task2;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class Task3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Scanner scanner = new Scanner(System.in);
         double x = scanner.nextDouble();
         System.out.println("Введите номер действия: 1 – квадрат; 2 – корень; 3 – синус; 4 – косинус");
