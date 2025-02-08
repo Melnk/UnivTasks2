@@ -2,6 +2,8 @@ package org.example.HomeWork2;
 
 
 // File: Task7.java
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class HW7 {
@@ -29,7 +31,8 @@ public class HW7 {
         return (n / 10) % 10;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a natural number n (n <= 100):");
         int n = scanner.nextInt();

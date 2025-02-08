@@ -1,11 +1,14 @@
 package org.example.HomeWork2;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class HW6 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter two number: ");
+        System.out.println("Введите два числа: ");
         int n = scanner.nextInt();
         int a = scanner.nextInt();
         double resultG = 0;
