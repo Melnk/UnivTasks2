@@ -1,5 +1,8 @@
 package org.example.HomeWork4.Task2;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
+
 public class Vector2D {
     private double x;
     private double y;
@@ -96,7 +99,8 @@ public class Vector2D {
     }
 
     // Тестирование класса
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         try {
             Vector2D v1 = new Vector2D(3, 4);
             Vector2D v2 = new Vector2D(1, 2);
