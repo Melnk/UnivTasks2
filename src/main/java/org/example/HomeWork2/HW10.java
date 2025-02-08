@@ -1,12 +1,14 @@
 package org.example.HomeWork2;
 
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class HW10 {
 
     public static String getAgeNaming(int n) {
         if (n < 1 || n > 100) {
-            throw new IllegalArgumentException("Age must be between 1 and 100.");
+            throw new IllegalArgumentException("Возраст должен быть от 1 до 100 лет.");
         }
 
         if (n % 10 == 1 && n % 100 != 11) {
@@ -18,9 +20,10 @@ public class HW10 {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter age (n <= 100):");
+        System.out.println("Введите возраст (n <= 100):");
         int n = scanner.nextInt();
 
         try {

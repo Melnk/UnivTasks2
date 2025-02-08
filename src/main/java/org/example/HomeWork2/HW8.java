@@ -1,6 +1,8 @@
 package org.example.HomeWork2;
 
 // File: Task8.java
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 public class HW8 {
@@ -12,12 +14,13 @@ public class HW8 {
         return a;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the size of the array n:");
+        System.out.println("Введите размер массива:");
         int n = scanner.nextInt();
         int[] array = fillArray(n);
-        System.out.println("Generated array:");
+        System.out.println("Генерация массива:");
         for (int value : array) {
             System.out.print(value + " ");
         }
