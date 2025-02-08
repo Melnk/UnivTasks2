@@ -1,11 +1,13 @@
 package org.example.HomeWork3;
 
-// Task 1: Reverse sections of an array
+// Файл: AllTasks.java
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 public class AllTasks {
 
-    // Reverse subsection of an array
+    // Метод для реверса подмассива
     public static void reverseSubArray(int[] arr, int start, int end) {
         while (start < end) {
             int temp = arr[start];
@@ -16,17 +18,17 @@ public class AllTasks {
         }
     }
 
-    // Task 1a: Reverse elements between the 2nd and 10th elements
+    // Метод для реверса элементов между 2-м и 10-м элементами
     public static void reverseBetweenSecondAndTenth(int[] arr) {
         reverseSubArray(arr, 2, 9);
     }
 
-    // Task 1b: Reverse elements between k and s
+    // Метод для реверса элементов между k и s
     public static void reverseBetweenKAndS(int[] arr, int k, int s) {
         reverseSubArray(arr, k + 1, s - 1);
     }
 
-    // Task 1c: Reverse elements between max and min
+    // Метод для реверса элементов между максимумом и минимумом
     public static void reverseBetweenMaxAndMin(int[] arr) {
         int maxIndex = 0, minIndex = 0;
         for (int i = 1; i < arr.length; i++) {
@@ -36,7 +38,7 @@ public class AllTasks {
         reverseSubArray(arr, Math.min(maxIndex, minIndex), Math.max(maxIndex, minIndex));
     }
 
-    // Task 2: Swap first negative and last positive
+    // Метод для обмена первого отрицательного и последнего положительного элементов
     public static void swapFirstNegativeAndLastPositive(int[] arr) {
         int firstNegative = -1, lastPositive = -1;
         for (int i = 0; i < arr.length; i++) {
@@ -50,7 +52,7 @@ public class AllTasks {
         }
     }
 
-    // Task 3a: Numbers appearing exactly once
+    // Метод для получения чисел, встречающихся в массиве ровно один раз
     public static List<Integer> uniqueNumbers(int[] arr) {
         Map<Integer, Integer> countMap = new HashMap<>();
         for (int num : arr) countMap.put(num, countMap.getOrDefault(num, 0) + 1);
@@ -61,7 +63,7 @@ public class AllTasks {
         return result;
     }
 
-    // Task 3b: One number from each group
+    // Метод для получения одного числа из каждой группы повторяющихся чисел
     public static List<Integer> oneFromEachGroup(int[] arr) {
         Set<Integer> seen = new HashSet<>();
         List<Integer> result = new ArrayList<>();
@@ -74,19 +76,19 @@ public class AllTasks {
         return result;
     }
 
-    // Task 3c: Count distinct numbers
+    // Метод для подсчета количества уникальных чисел
     public static int countDistinctNumbers(int[] arr) {
         return (int) Arrays.stream(arr).distinct().count();
     }
 
-    // Task 3d: Count numbers appearing more than once
+    // Метод для подсчета количества чисел, встречающихся более одного раза
     public static long countDuplicates(int[] arr) {
         Map<Integer, Integer> countMap = new HashMap<>();
         for (int num : arr) countMap.put(num, countMap.getOrDefault(num, 0) + 1);
         return countMap.values().stream().filter(count -> count > 1).count();
     }
 
-    // Task 3e: Check if any duplicates exist
+    // Метод для проверки наличия дубликатов в массиве
     public static boolean hasDuplicates(int[] arr) {
         Set<Integer> seen = new HashSet<>();
         for (int num : arr) {
@@ -96,7 +98,7 @@ public class AllTasks {
         return false;
     }
 
-    // Task 4: Sum of largest elements in each row of a matrix
+    // Метод для вычисления суммы наибольших элементов в каждой строке матрицы
     public static double sumOfLargestElements(double[][] matrix) {
         double sum = 0;
         for (double[] row : matrix) {
@@ -105,9 +107,9 @@ public class AllTasks {
         return sum;
     }
 
-    // Task 5: Fill array with digits of n in reverse order
+    // Метод для получения массива цифр числа n в обратном порядке
     public static int[] digitsInReverseOrder(int n) {
-        int[] result = new int[6]; // Array size is 6 to accommodate n <= 999999
+        int[] result = new int[6]; // Массив фиксированного размера 6 для n <= 999999
         int index = 0;
         while (n > 0) {
             result[index++] = n % 10;
@@ -116,22 +118,24 @@ public class AllTasks {
         return result;
     }
 
-    public static void main(String[] args) {
-        // Example usage for Task 1 and Task 5
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8")); // Устанавливаем вывод в UTF-8
+
+        // Пример использования методов
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
         reverseBetweenSecondAndTenth(arr);
-        System.out.println("Reversed between 2nd and 10th: " + Arrays.toString(arr));
+        System.out.println("Реверс между 2-м и 10-м: " + Arrays.toString(arr));
 
         reverseBetweenKAndS(arr, 3, 8);
-        System.out.println("Reversed between k and s: " + Arrays.toString(arr));
+        System.out.println("Реверс между k и s: " + Arrays.toString(arr));
 
         reverseBetweenMaxAndMin(arr);
-        System.out.println("Reversed between max and min: " + Arrays.toString(arr));
+        System.out.println("Реверс между max и min: " + Arrays.toString(arr));
 
         swapFirstNegativeAndLastPositive(arr);
-        System.out.println("Swapped first negative and last positive: " + Arrays.toString(arr));
+        System.out.println("Обмен первого отрицательного и последнего положительного: " + Arrays.toString(arr));
 
         int[] digits = digitsInReverseOrder(12345);
-        System.out.println("Digits in reverse order: " + Arrays.toString(digits));
+        System.out.println("Цифры в обратном порядке: " + Arrays.toString(digits));
     }
 }
